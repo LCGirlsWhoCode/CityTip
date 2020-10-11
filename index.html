@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>CityTip</title>
+        <link href="./css/main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <main>
+        <div class="container">
+            <div class="child" id="page0" style="height:30%">
+                <h1>CityTip</h1>
+                <p>Everything you'll need to start planning your next trip.</p>
+                <button><span><a href="#page1">&#8964;</a></span></button>
+            </div><!--page0-->
+            <div class="child" id="page1" style="height:100%;">
+                <div id="weather"></div>
+            </div><!--page1-->
+            <div class="child" id="page2" style="height:100%;">
+            </div><!--page2-->
+        </div><!--container-->
+    </main>
+<script>
+    import WolframNotebookEmbedder from 'wolfram-notebook-embedder';
+    var embedder = WolframNotebookEmbedder.embed('https://www.wolframcloud.com/obj/jpoeschko/Public/BasicExample.nb', document.getElementById('weather'));
+    // function changeBackground() {
+    //     var d = new Date();
+    //     var n = d.getHours();
+    //     console.log(n);
+    //     if (n == 23 || n < 7) {
+    //         document.getElementsByClassName("page1").className="day";
+    //     } else {
+    //         document.getElementsByClassName("page1").className="night";
+    //     }
+    // }
+    // changeBackground();
+</script>
+    </body>
+</html>

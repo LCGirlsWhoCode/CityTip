@@ -1,0 +1,87 @@
+a{
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+a:visited{
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+body,html{
+    height:100vh;
+    margin:0em;
+    scroll-behavior: smooth;
+    color: #222;
+}
+
+button{
+    color: rgb(90,90,90);
+    background-color: transparent;
+    font-family: "Ubuntu", Arial, sans-serif;
+    font-size: 1em;
+    outline: none;
+    border: none;
+}
+button:hover{
+    font-size: 1.3em;
+    cursor: pointer;
+}
+button span{
+    display: block;
+    position: relative;
+    transition: 0.3s;
+}
+
+h1{
+    font-family: "Ubuntu", Arial, sans-serif;
+}
+
+p{
+    font-family: "Ubuntu", Arial, sans-serif;
+}
+
+.container{
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+}
+
+.child{
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
+    position: relative;
+}
+
+#page0{
+    text-align: center;
+    justify-content: center;
+    background-image: linear-gradient(to left, rgb(241,248,254), rgb(192,229,252), rgb(145,210,249));
+    padding-top: 2em;
+}
+
+
+#page1{
+    background-image: linear-gradient(to left, rgb(241,248,254), rgb(192,229,252), rgb(145,210,249));
+}
+
+#page2{
+    background-color: rgb(145,210,249);
+}
+
+::selection{
+    background: #87CEEB;
+    color: white;
+}
+
+/* .day{
+    background-color: red;
+}
+.night{
+    background-color: black;
+} */
