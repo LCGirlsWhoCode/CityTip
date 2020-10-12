@@ -59,13 +59,13 @@ p{
     position: relative;
 }
 
-iframe{
+/* iframe{
     position: absolute;
     width:29%;
     height:45%;
     margin-left: 50%;
     margin-bottom: 50%;
-}
+} */
 
 #page0{
     text-align: center;
