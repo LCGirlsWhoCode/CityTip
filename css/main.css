@@ -16,6 +16,7 @@ body,html{
     margin:0em;
     scroll-behavior: smooth;
     color: #222;
+    background-color: #EEE;
 }
 
 button{
@@ -58,20 +59,18 @@ p{
     position: relative;
 }
 
+iframe{
+    position: absolute;
+    width:29%;
+    height:45%;
+    margin-left: 50%;
+    margin-bottom: 50%;
+}
+
 #page0{
     text-align: center;
     justify-content: center;
-    background-image: linear-gradient(to left, rgb(241,248,254), rgb(192,229,252), rgb(145,210,249));
     padding-top: 2em;
-}
-
-
-#page1{
-    background-image: linear-gradient(to left, rgb(241,248,254), rgb(192,229,252), rgb(145,210,249));
-}
-
-#page2{
-    background-color: rgb(145,210,249);
 }
 
 ::selection{

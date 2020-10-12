@@ -17,15 +17,19 @@
                 <button><span><a href="#page1">&#8964;</a></span></button>
             </div><!--page0-->
             <div class="child" id="page1" style="height:100%;">
-                <div id="weather"></div>
+                <div id="weather">
+                    <iframe frameborder="0" width='100%' allowfullscreen src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf'>
+                    </iframe></div>
             </div><!--page1-->
             <div class="child" id="page2" style="height:100%;">
+                <div id="map">
+                    <iframe frameborder="0" width="100%" allowfullscreen src='https://www.wolframcloud.com/obj/eaeb95de-385a-413e-a3d8-9b11a4ef326f'>
+                    </iframe>
+                </div>
             </div><!--page2-->
         </div><!--container-->
     </main>
 <script>
-    import WolframNotebookEmbedder from 'wolfram-notebook-embedder';
-    var embedder = WolframNotebookEmbedder.embed('https://www.wolframcloud.com/obj/15673644-1bd1-412e-aa88-04503e6cec73', document.getElementById('weather'));
     // function changeBackground() {
     //     var d = new Date();
     //     var n = d.getHours();
