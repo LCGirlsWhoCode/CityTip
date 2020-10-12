@@ -18,34 +18,16 @@
                 <button><span><a href="#page1">&#8964;</a></span></button>
             </div><!--page0-->
             <div class="child" id="page1" style="height:100%;">
-                <div id="notebookContainer"></div>
-                    <!-- <iframe frameborder="0" width='100%' allowfullscreen src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf'>
-                    </iframe></div> -->
+                <div id="weather"></div>
             </div><!--page1-->
-            <div class="child" id="page2" style="height:100%;">
-                <div id="map">
-                    <!-- <iframe frameborder="0" width="100%" allowfullscreen src='https://www.wolframcloud.com/obj/eaeb95de-385a-413e-a3d8-9b11a4ef326f'>
-                    </iframe> -->
-                </div>
-            </div><!--page2-->
         </div><!--container-->
     </main>
 <script>
     var embedding = WolframNotebookEmbedder.embed(
         'https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf',
-        document.getElementById('notebookContainer')
+        document.getElementById('weather'),
         );
-    embedding.then(function (nb) {
-    // This will reset the DynamicModule variable x$$
-    // in the first cell of the notebook.
-    return nb.getCells().then(function (cells) {
-        nb.setDynamicModuleVariable({
-            cellId: cells[0].id,
-            name: 'x$$',
-            value: 0
-        });
-    });
-})
+
     // function changeBackground() {
     //     var d = new Date();
     //     var n = d.getHours();
