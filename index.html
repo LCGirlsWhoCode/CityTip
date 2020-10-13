@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>CityTip</title>
         <link href="./css/main.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:200,300,400,500,700">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script crossorigin src="https://unpkg.com/wolfram-notebook-embedder@0.1/dist/wolfram-notebook-embedder.min.js"></script>
     </head>
@@ -13,7 +13,7 @@
     <main>
         <div class="container">
             <div class="child" id="page0" style="height:30%">
-                <h1>CityTip</h1>
+                <h1>City<span class="dot">.</span><span class="bold">Tip</span></h1>
                 <p>Everything you'll need to start planning your next trip.</p>
                 <button><span><a href="#page1">&#8964;</a></span></button>
             </div><!--page0-->
@@ -27,18 +27,9 @@
         'https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf',
         document.getElementById('weather'),
         );
-
-    // function changeBackground() {
-    //     var d = new Date();
-    //     var n = d.getHours();
-    //     console.log(n);
-    //     if (n == 23 || n < 7) {
-    //         document.getElementsByClassName("page1").className="day";
-    //     } else {
-    //         document.getElementsByClassName("page1").className="night";
-    //     }
-    // }
-    // changeBackground();
+    function mobile(){
+        //replace all with "Sorry, this application does not work on mobile [insert sad self-drawn cartoon image]"
+    }
 </script>
     </body>
 </html>
