@@ -7,7 +7,6 @@
         <link href="./css/main.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:200,300,400,500,700">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script crossorigin src="https://unpkg.com/wolfram-notebook-embedder@0.1/dist/wolfram-notebook-embedder.min.js"></script>
     </head>
     <body>
     <main>
@@ -18,17 +17,42 @@
                 <button><span><a href="#page1">&#8964;</a></span></button>
             </div><!--page0-->
             <div class="child" id="page1" style="height:100%;">
-                <div id="weather"></div>
+                <table>
+                    <tr>
+                        <th><iframe id="weather" width='415' height='400' src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf' frameborder='0'></iframe></th>
+                        <th>
+                            <h2>Weather<span class="dot">.</span><span class="bold">Data</span></h2>
+                            <p>Enter a capitalized city name in quotation marks and hit return.</p>
+                            <p>
+                                <input for="c" type="text" id="celsius" oninput="fahrenheit()"> <label for="c">ºC </label>
+                                <span style="color:#DE1300;"> = </span>
+                                <input for="f" type="text" id="fahrenheit" READONLY><label for="f"> ºF</label>
+                            </p>
+                            <p>
+                                <input for="kmh" type="text" id="kilometeres" oninput="miles()"> <label for="kmh">km/h </label>
+                                <span style="color:#DE1300;"> = </span>
+                                <input for="mph" type="text" id="miles" READONLY><label for="mph"> mph</label>
+                            </p>
+                        </th>
+                    </tr>
+                </table>
             </div><!--page1-->
         </div><!--container-->
     </main>
 <script>
-    var embedding = WolframNotebookEmbedder.embed(
-        'https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf',
-        document.getElementById('weather'),
-        );
     function mobile(){
         //replace all with "Sorry, this application does not work on mobile [insert sad self-drawn cartoon image]"
+    }
+    function fahrenheit(){
+        var deg = document.getElementById("celsius").value;
+        deg = deg*(9/5) + 32;
+        document.getElementById("fahrenheit").value=deg;
+    }
+    function miles(){
+        var km = document.getElementById("kilometeres").value;
+        km = km/1.609;
+        km = Math.round(km*10)/10;
+        document.getElementById("miles").value=km;
     }
 </script>
     </body>

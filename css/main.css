@@ -19,7 +19,7 @@ body,html{
 }
 
 button{
-    color: #E30F19;
+    color: #DE1300;
     background-color: transparent;
     font-family: "Ubuntu", Arial, sans-serif;
     font-size: 1em;
@@ -41,8 +41,31 @@ h1{
     font-weight: 200;
 }
 
+h2{
+    font-family: "Ubuntu", Arial, sans-serif;
+    font-weight: 200; 
+}
+
+input[type=text]{
+    outline: none;
+    border-style: hidden hidden solid hidden;
+    border-width: .1em;
+    border-color: #DE1300;
+    font-family: "Ubuntu", Arial, sans-serif;
+    font-weight: 200;
+    font-size: .9em;
+    max-width: 2.3em;
+}
+
 p{
     font-family: "Ubuntu", Arial, sans-serif;
+    font-weight: 200;
+}
+
+td, th{
+    padding-left: 5em;
+    border-collapse: collapse;
+    text-align: left;
 }
 
 .bold{
@@ -63,8 +86,8 @@ p{
     position: relative;
 }
 
-.dot{
-    color: #E30F19;
+.dot{ /*heutink-ict.nl*/
+    color: #DE1300;
     font-size: 1.5em;
 }
 
@@ -83,7 +106,7 @@ p{
 }
 
 ::selection{
-    background: #E30F19;
+    background: #DE1300;
     color: white;
 }
 
