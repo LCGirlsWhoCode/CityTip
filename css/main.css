@@ -46,6 +46,10 @@ h2{
     font-weight: 200; 
 }
 
+iframe{
+    padding: 0em;
+}
+
 input[type=text]{
     outline: none;
     border-style: hidden hidden solid hidden;
@@ -54,6 +58,7 @@ input[type=text]{
     font-family: "Ubuntu", Helvetica, sans-serif;
     font-weight: 200;
     font-size: .9em;
+    max-width: 2.3em;
 }
 
 p{
@@ -72,27 +77,9 @@ td, th{
     font-weight: 700;
 }
 
-.container{
-    overflow: scroll;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
-}
-
-.child{
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-align: center;
-    position: relative;
-}
-
 .dot{ /*heutink-ict.nl*/
     color: #DE1300;
     font-size: 1.5em;
-}
-
-.short{
-    max-width: 2.3em;
 }
 
 #page0{

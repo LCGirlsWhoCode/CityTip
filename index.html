@@ -9,29 +9,51 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-    <main class="all">
-        <div class="container">
-            <div class="child" id="page0" style="height:30%">
+    <main>
+        <div>
+            <div id="page0" style="height:30%">
                 <h1>City<span class="dot">.</span><span class="bold">Tip</span></h1>
-                <p>Everything you'll need to start planning your next trip.</p>
+                <p>Everything you'll need to start planning your next road trip.</p>
                 <button><span><a href="#page1">&#8964;</a></span></button>
             </div><!--page0-->
-            <div class="child" id="page1">
+            <div>
                 <table>
                     <tr>
                         <th><iframe id="weather" width='415' height='400' src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf' frameborder='0'></iframe></th>
                         <th>
                             <h2>Weather<span class="dot">.</span><span class="bold">Data</span></h2>
-                            <p>Which city would you like to visit? (Capitalized, quotation marks)</p>
+                            <p>Which city would you like to visit? (Keep quotation marks)</p>
                             <p>
-                                <input class="short" for="c" type="text" id="celsius" oninput="fahrenheit()" placeholder="deg"> <label for="c">ºC </label>
+                                <input for="c" type="text" id="celsius" oninput="fahrenheit()" placeholder="deg"> <label for="c">ºC </label>
                                 <span style="color:#DE1300;"> = </span>
                                 <input class="short" for="f" type="text" id="fahrenheit" READONLY><label for="f"> ºF</label>
                             </p>
                             <p>
-                                <input class="short" for="kmh" type="text" id="kilometeres" oninput="miles()" placeholder="km/h"> <label for="kmh">km/h </label>
+                                <input for="kph" type="text" id="kilometeres" oninput="miles()" placeholder="kph"> <label for="kph">kph </label>
                                 <span style="color:#DE1300;"> = </span>
-                                <input class="short" for="mph" type="text" id="miles" READONLY><label for="mph"> mph</label>
+                                <input for="mph" type="text" id="miles" READONLY><label for="mph"> mph</label>
+                            </p>
+                        </th>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th><iframe id="map" width='415' height='530' src="https://www.wolframcloud.com/obj/e0c7ab7b-ddad-47a7-b433-8c729692360a" frameborder="0"></iframe></th>
+                        <th>
+                            <h2>Total<span class="dot">.</span><span class="bold">Distance</span></h2>
+                            <p>From where and to where are you going?</p>
+                            <button id="impOrMet" onclick="impOrMet()">Imperial System</button>
+                            <p>
+                                <label for="dimi">Distance in <span class="miOrKm">miles</span>: </label>
+                                <input for="dimi" type="text" id="mi" placeholder="0">
+                            </p>
+                            <p>
+                                <label for="mipg"><span class="miOrKm">Miles</span> per gallon: </label>
+                                <input for="mipg" type="text" id="mpg" placeholder="0" oninput="gas()">
+                            </p>
+                            <p>
+                                <label for="egas">Expected gas: </label>
+                                <input for="egas" type="text" id="exptGas" READONLY> <span id="galOrLi">gallons</span>
                             </p>
                         </th>
                     </tr>
@@ -39,18 +61,9 @@
                 <table>
                     <tr>
                         <th><iframe id="map" width='415' height='200' src="https://www.wolframcloud.com/obj/15264573-865b-4ba8-9c6b-016dcf85209b" frameborder="0"></iframe></th>
-                        <th><iframe id="map" width='415' height='400' src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf' frameborder='0'></iframe></th>
                         <th>
                             <h2>Distance<span class="dot">.</span>per<span class="dot">.</span><span class="bold">Day</span></h2>
                             <p>How many days do you plan to travel?</p>
-                            <p>
-                                <label for="mileage">Car mileage: </label>
-                                <input for="mileage" type="text" id="mileage" oninput="gas()" placeholder="unit">
-                            </p>
-                            <p>
-                                <label for="exptGas">Expected gas: </label>
-                                <input for="exptGas" type="text" id="exptGas" READONLY>
-                            </p>
                         </th>
                     </tr>
                 </table>
@@ -66,11 +79,19 @@
         deg = deg*(9/5) + 32;
         document.getElementById("fahrenheit").value=deg;
     }
+
     function miles(){
         var km = document.getElementById("kilometeres").value;
         km = km/1.609;
         km = Math.round(km*10)/10;
         document.getElementById("miles").value=km;
+    }
+
+    function gas(){
+        var mpg = document.getElementById("mpg").value;
+        var mi = document.getElementById("mi").value;
+        var exptGas = mi/mpg;
+        document.getElementById("exptGas").value=exptGas;
     }
 </script>
     </body>
