@@ -21,7 +21,7 @@ body,html{
 button{
     color: #DE1300;
     background-color: transparent;
-    font-family: "Ubuntu", Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica Neue, sans-serif;
     font-size: 1em;
     outline: none;
     border: none;
@@ -37,12 +37,12 @@ button span{
 }
 
 h1{
-    font-family: "Ubuntu", Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica, sans-serif;
     font-weight: 200;
 }
 
 h2{
-    font-family: "Ubuntu", Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica, sans-serif;
     font-weight: 200; 
 }
 
@@ -51,15 +51,15 @@ input[type=text]{
     border-style: hidden hidden solid hidden;
     border-width: .1em;
     border-color: #DE1300;
-    font-family: "Ubuntu", Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica, sans-serif;
     font-weight: 200;
     font-size: .9em;
-    max-width: 2.3em;
 }
 
 p{
-    font-family: "Ubuntu", Arial, sans-serif;
+    font-family: "Ubuntu", Helvetica, sans-serif;
     font-weight: 200;
+    line-height: 1.3em;
 }
 
 td, th{
@@ -91,13 +91,9 @@ td, th{
     font-size: 1.5em;
 }
 
-/* iframe{
-    position: absolute;
-    width:29%;
-    height:45%;
-    margin-left: 50%;
-    margin-bottom: 50%;
-} */
+.short{
+    max-width: 2.3em;
+}
 
 #page0{
     text-align: center;
@@ -108,8 +104,4 @@ td, th{
 ::selection{
     background: #DE1300;
     color: white;
-}
-
-@media screen and (max-width:600px){
-    /*call function mobile();*/
 }
