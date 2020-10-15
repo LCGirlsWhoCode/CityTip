@@ -6,7 +6,7 @@
         <title>CityTip</title>
         <link href="./css/main.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:200,300,400,500,700">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</script>
     </head>
     <body>
     <main>
@@ -25,13 +25,13 @@
                             <p>Which city would you like to visit? (Keep quotation marks)</p>
                             <p>
                                 <input for="c" type="text" id="celsius" oninput="fahrenheit()" placeholder="deg"> <label for="c">ºC </label>
-                                <span style="color:#DE1300;"> = </span>
+                                <span style="color:#DA2410;"> = </span>
                                 <input for="f" type="text" id="fahrenheit" READONLY><label for="f"> ºF</label>
                             </p>
                             <p>
                                 <input for="kph" type="text" id="kph" oninput="tomph()" placeholder="kph">
                                 <label for="kph">kph </label>
-                                <span style="color:#DE1300;"> = </span>
+                                <span style="color:#DA2410;"> = </span>
                                 <input for="mph" type="text" id="mph" READONLY>
                                 <label for="mph">mph</label>
                             </p>
@@ -50,7 +50,7 @@
                                 <input for="dimi" type="text" id="mi" placeholder="0">
                             </p>
                             <p>
-                                <label for="mipg"><span id="miOrKmCap">Miles</span> per <span id="galOrLi">gallon</span>: </label>
+                                <label for="mipg"><span id="miOrKmCap">Miles</span> per <span id="galOrLi">gal</span>: </label>
                                 <input for="mipg" type="text" id="mpg" placeholder="0" oninput="gas()">
                             </p>
                             <p>
@@ -60,7 +60,7 @@
                             <p id="miToKm" style="display:none;">
                                 <input for="fromMi" type="text" oninput="miToKm()" id="fromMi" placeholder="mi">
                                 <label for="fromMi">mi</label>
-                                <span style="color:#DE1300;"> = </span>
+                                <span style="color:#DA2410;"> = </span>
                                 <input for="toKm" type="text" id="toKm" READONLY>
                                 <label for="toKm">km</label>
                             </p>
@@ -69,7 +69,7 @@
                 </table>
                 <table>
                     <tr>
-                        <th><iframe id="map" width='415' height='200' src="https://www.wolframcloud.com/obj/15264573-865b-4ba8-9c6b-016dcf85209b" frameborder="0"></iframe></th>
+                        <th><iframe id="map" width='415' height='235' src="https://www.wolframcloud.com/obj/15264573-865b-4ba8-9c6b-016dcf85209b" frameborder="0"></iframe></th>
                         <th>
                             <h2>Distance<span class="dot">.</span>per<span class="dot">.</span><span class="bold">Day</span></h2>
                             <p>How many days do you plan to travel?</p>
@@ -123,14 +123,14 @@
             miOrKmCap.innerHTML="Kilometres";
             miOrKm.innerHTML="kilometres";
             galOrLi.innerHTML="litre";
-            galOrLiS.innerHTML="litres";
+            galOrLiS.innerHTML="L";
             miToKm.style.display="block";
         } else {
             impOrMet.innerHTML="Use Metric System";
             miOrKmCap.innerHTML="Miles";
             miOrKm.innerHTML="miles";
             galOrLi.innerHTML="gallon";
-            galOrLiS.innerHTML="gallons";
+            galOrLiS.innerHTML="gal";
             miToKm.style.display="none";
         }
     }
