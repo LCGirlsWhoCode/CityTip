@@ -97,7 +97,7 @@ td, th{
     border: none;
     border-radius: 3px;
     border: solid;
-    border-color: #89160A;
+    border-color: rgb(194, 13, 14);
     border-width: .1em;
     padding: .9em;
 }
