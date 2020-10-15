@@ -21,7 +21,7 @@ body,html{
 button{
     color: #DE1300;
     background-color: transparent;
-    font-family: "Ubuntu", Helvetica Neue, sans-serif;
+    font-family: "Ubuntu", Helvetica, sans-serif;
     font-size: 1em;
     outline: none;
     border: none;
@@ -48,6 +48,7 @@ h2{
 
 iframe{
     padding: 0em;
+    margin-bottom: 1em;
 }
 
 input[type=text]{
@@ -59,6 +60,10 @@ input[type=text]{
     font-weight: 200;
     font-size: .9em;
     max-width: 2.3em;
+}
+
+label{
+    cursor: text;
 }
 
 p{
@@ -80,6 +85,26 @@ td, th{
 .dot{ /*heutink-ict.nl*/
     color: #DE1300;
     font-size: 1.5em;
+}
+
+#impOrMet{
+    color: white;
+    background-color: #DE1300;
+    font-family: "Ubuntu", Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: .9em;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: .9em;
+}
+#impOrMet:hover{
+    font-size: .9em;
+    color: #DE1300;
+    background-color: white;
+    border: solid;
+    border-color: #DE1300;
+    border-width: .1em;
 }
 
 #page0{

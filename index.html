@@ -26,34 +26,43 @@
                             <p>
                                 <input for="c" type="text" id="celsius" oninput="fahrenheit()" placeholder="deg"> <label for="c">ºC </label>
                                 <span style="color:#DE1300;"> = </span>
-                                <input class="short" for="f" type="text" id="fahrenheit" READONLY><label for="f"> ºF</label>
+                                <input for="f" type="text" id="fahrenheit" READONLY><label for="f"> ºF</label>
                             </p>
                             <p>
-                                <input for="kph" type="text" id="kilometeres" oninput="miles()" placeholder="kph"> <label for="kph">kph </label>
+                                <input for="kph" type="text" id="kph" oninput="tomph()" placeholder="kph">
+                                <label for="kph">kph </label>
                                 <span style="color:#DE1300;"> = </span>
-                                <input for="mph" type="text" id="miles" READONLY><label for="mph"> mph</label>
+                                <input for="mph" type="text" id="mph" READONLY>
+                                <label for="mph">mph</label>
                             </p>
                         </th>
                     </tr>
                 </table>
                 <table>
                     <tr>
-                        <th><iframe id="map" width='415' height='530' src="https://www.wolframcloud.com/obj/e0c7ab7b-ddad-47a7-b433-8c729692360a" frameborder="0"></iframe></th>
+                        <th><iframe id="map" width='415' height='430' src="https://www.wolframcloud.com/obj/e0c7ab7b-ddad-47a7-b433-8c729692360a" frameborder="0"></iframe></th>
                         <th>
                             <h2>Total<span class="dot">.</span><span class="bold">Distance</span></h2>
                             <p>From where and to where are you going?</p>
-                            <button id="impOrMet" onclick="impOrMet()">Imperial System</button>
+                            <button id="impOrMet" onclick="impOrMet()"><span>Use Metric System</span></button>
                             <p>
-                                <label for="dimi">Distance in <span class="miOrKm">miles</span>: </label>
+                                <label for="dimi">Distance in <span id="miOrKm">miles</span>: </label>
                                 <input for="dimi" type="text" id="mi" placeholder="0">
                             </p>
                             <p>
-                                <label for="mipg"><span class="miOrKm">Miles</span> per gallon: </label>
+                                <label for="mipg"><span id="miOrKmCap">Miles</span> per <span id="galOrLi">gallon</span>: </label>
                                 <input for="mipg" type="text" id="mpg" placeholder="0" oninput="gas()">
                             </p>
                             <p>
                                 <label for="egas">Expected gas: </label>
-                                <input for="egas" type="text" id="exptGas" READONLY> <span id="galOrLi">gallons</span>
+                                <input for="egas" type="text" id="exptGas" READONLY> <span id="galOrLiS">gallons</span>
+                            </p>
+                            <p id="miToKm" style="display:none;">
+                                <input for="fromMi" type="text" oninput="miToKm()" id="fromMi" placeholder="mi">
+                                <label for="fromMi">mi</label>
+                                <span style="color:#DE1300;"> = </span>
+                                <input for="toKm" type="text" id="toKm" READONLY>
+                                <label for="toKm">km</label>
                             </p>
                         </th>
                     </tr>
@@ -80,18 +89,50 @@
         document.getElementById("fahrenheit").value=deg;
     }
 
-    function miles(){
-        var km = document.getElementById("kilometeres").value;
-        km = km/1.609;
-        km = Math.round(km*10)/10;
-        document.getElementById("miles").value=km;
+    function tomph(){
+        var mph = document.getElementById("kph").value;
+        mph = mph/1.609;
+        mph = Math.round(mph*100)/100;
+        document.getElementById("mph").value=mph;
+    }
+
+    function miToKm(){
+        var mi = document.getElementById("fromMi").value;
+        mi = mi*1.609;
+        mi = Math.round(mi*100)/100;
+        document.getElementById("toKm").value=mi;
     }
 
     function gas(){
         var mpg = document.getElementById("mpg").value;
         var mi = document.getElementById("mi").value;
         var exptGas = mi/mpg;
+        exptGas = Math.round(exptGas*100)/100;
         document.getElementById("exptGas").value=exptGas;
+    }
+
+    function impOrMet(){
+        var impOrMet = document.getElementById("impOrMet");
+        var miOrKmCap = document.getElementById("miOrKmCap");
+        var miOrKm = document.getElementById("miOrKm");
+        var galOrLi = document.getElementById("galOrLi");
+        var galOrLiS = document.getElementById("galOrLiS");
+        var miToKm = document.getElementById("miToKm");
+        if (miToKm.style.display==="none"){
+            impOrMet.innerHTML="Use Imperial System";
+            miOrKmCap.innerHTML="Kilometres";
+            miOrKm.innerHTML="kilometres";
+            galOrLi.innerHTML="litre";
+            galOrLiS.innerHTML="litres";
+            miToKm.style.display="block";
+        } else {
+            impOrMet.innerHTML="Use Metric System";
+            miOrKmCap.innerHTML="Miles";
+            miOrKm.innerHTML="miles";
+            galOrLi.innerHTML="gallon";
+            galOrLiS.innerHTML="gallons";
+            miToKm.style.display="none";
+        }
     }
 </script>
     </body>
