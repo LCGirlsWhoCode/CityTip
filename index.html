@@ -23,7 +23,7 @@
             <div>
                 <table>
                     <tr>
-                        <th><iframe id="weather" width='415' height='400' src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf' frameborder='0'></iframe></th>
+                        <th><iframe width='415' height='400' src='https://www.wolframcloud.com/obj/3037860c-2cde-4b28-bfd2-ca846ef2bdaf' frameborder='0'></iframe></th>
                         <th>
                             <h2>Weather<span class="dot">.</span><span class="bold">Data</span></h2>
                             <p>Which city would you like to visit? (Keep quotation marks)</p>
@@ -44,11 +44,11 @@
                 </table>
                 <table>
                     <tr>
-                        <th><iframe id="map" width='415' height='430' src="https://www.wolframcloud.com/obj/e0c7ab7b-ddad-47a7-b433-8c729692360a" frameborder="0"></iframe></th>
+                        <th><iframe width='415' height='430' src="https://www.wolframcloud.com/obj/e0c7ab7b-ddad-47a7-b433-8c729692360a" frameborder="0"></iframe></th>
                         <th>
                             <h2>Total<span class="dot">.</span><span class="bold">Distance</span></h2>
                             <p>From where and to where are you going?</p>
-                            <button id="impOrMet" onclick="impOrMet()"><span>Use Metric System</span></button>
+                            <button id="impOrMet" class="button" onclick="impOrMet()"><span>Use Metric System</span></button>
                             <p>
                                 <label for="dimi">Distance in <span id="miOrKm">miles</span>: </label>
                                 <input for="dimi" type="text" id="mi" placeholder="0">
@@ -73,10 +73,26 @@
                 </table>
                 <table>
                     <tr>
-                        <th><iframe id="map" width='415' height='235' src="https://www.wolframcloud.com/obj/15264573-865b-4ba8-9c6b-016dcf85209b" frameborder="0"></iframe></th>
+                        <th><iframe width='415' height='235' src="https://www.wolframcloud.com/obj/15264573-865b-4ba8-9c6b-016dcf85209b" frameborder="0"></iframe></th>
                         <th>
                             <h2>Distance<span class="dot">.</span>per<span class="dot">.</span><span class="bold">Day</span></h2>
                             <p>How many days do you plan to travel?</p>
+                            <button id="getDate" class="button" onclick="getDate()">Show current date</button>
+                            <p id="showDate"></p>
+                        </th>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th><iframe width='415' height='500' src="https://www.wolframcloud.com/obj/d1f6e560-0fa7-4cf2-a70b-f1756c502a32" frameborder="0"></iframe></th>
+                        <th>
+                            <h2>City<span class="dot">.</span><span class="bold">Information</span></h2>
+                            <p>What would you like to know?</p>
+                            <ul>
+                                <li>Population</li>
+                                <li>Nickname</li>
+                                <li>State/Province/Municipality, Country</li>
+                            </ul>
                         </th>
                     </tr>
                 </table>
@@ -136,6 +152,19 @@
             galOrLi.innerHTML="gallon";
             galOrLiS.innerHTML="gal";
             miToKm.style.display="none";
+        }
+    }
+
+    function getDate(){
+        var date = new Date();
+        var showDate = document.getElementById("showDate");
+        var dateToggle = document.getElementById("getDate");
+        if(dateToggle.innerHTML === "Show current date"){
+            showDate.innerHTML = date;
+            dateToggle.innerHTML = "Hide current date";
+        } else {
+            showDate.innerHTML = "";
+            dateToggle.innerHTML = "Show current date";
         }
     }
 </script>
