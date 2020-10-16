@@ -97,13 +97,14 @@ td, th{
     border: none;
     border-radius: 3px;
     border: solid;
-    border-color: rgb(194, 13, 14);
+    border-color: #C20D0E;
     border-width: .1em;
     padding: .9em;
 }
 #impOrMet:hover{
     font-size: .9em;
     background-color: #AA1B0D;
+    border-color:#89160A;
 }
 
 #page0{
