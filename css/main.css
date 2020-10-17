@@ -103,6 +103,7 @@ td, th{
     text-align: center;
     justify-content: center;
     padding-top: 2em;
+    padding-bottom: 3em;
 }
 
 ::selection{
