@@ -43,6 +43,10 @@ h1,h2,p,ul{
     list-style-type: circle;
 }
 
+h1{
+    text-align: center;
+}
+
 iframe{
     padding: 0em;
     margin-top: 1em;
